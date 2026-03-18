@@ -1,7 +1,6 @@
-def tokenize(source: str) -> list[str]:
+def tokenizeOok(source: str) -> list[str]:
     tokens = source.split()
     
-
     if len(tokens) % 2 != 0:
         raise ValueError("Invalid Ook program: uneven tokens")
     else:
@@ -9,9 +8,7 @@ def tokenize(source: str) -> list[str]:
 
     return tokens
 
-        
-def main():
-    print("Lexer")
+def tokenizeAscii(source: str) -> list[str]:
+    return list(source)
 
-if __name__ == "__main__":
-    main()
+

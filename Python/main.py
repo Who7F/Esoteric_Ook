@@ -3,18 +3,24 @@ import scr as scr
 def main():
     with open("Ook.txt") as source:
         
-        tokens = scr.tokenize(source.read())
+        tokens = scr.tokenizeOok(source.read())
         
-        program, jumpTable = scr.parse(tokens)
+        program, jumpTable = scr.parseOok(tokens)
        
         res = scr.vm(program, jumpTable)
         
         print(res)
-        print("sup")
+
 
     with open("ascii.txt") as source:
-        print(source.read())
         
+        tokens = scr.tokenizeAscii(source.read())
+
+        program = scr.parseAscii(tokens)
+
+        print(program)
+        code = scr.generator(program)
+        print(code)
 
 if __name__ == "__main__":
     main()

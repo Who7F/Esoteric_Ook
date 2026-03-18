@@ -1,4 +1,4 @@
-def parse(tokens):
+def parseOok(tokens):
     program = []
     jumpTable = {}
     stack = []
@@ -34,8 +34,10 @@ def parse(tokens):
 
     return program, jumpTable
 
-def main():
-    print("parse")
 
-if __name__=="__main__":
-    main()
+def parseAscii(tokens):
+    program = []
+    for t in tokens:
+        program.append(ord(t))
+
+    return program

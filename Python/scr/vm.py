@@ -35,9 +35,3 @@ def vm(program, jumpTable):
          
     return ''.join(res)
 
-def main():
-    print("VM")
-
-
-if __name__=="__main__":
-    main()
