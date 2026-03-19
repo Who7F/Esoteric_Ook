@@ -4,9 +4,9 @@ def main():
     with open("Ook.txt") as source:
         
         tokens = scr.tokenizeOok(source.read())
-        
+
         program, jumpTable = scr.parseOok(tokens)
-       
+
         res = scr.vm(program, jumpTable)
         
         print(res)
@@ -18,9 +18,21 @@ def main():
 
         program = scr.parseAscii(tokens)
 
-        print(program)
         code = scr.generator(program)
-        print(code)
+                
+        test = scr.encOok(code)
+
+        tokens = scr.tokenizeOok(test)
+
+        program, jumpTable = scr.parseOok(tokens)
+
+        
+       
+        res = scr.vm(program, jumpTable)
+        
+        print(res)
+        
+
 
 if __name__ == "__main__":
     main()

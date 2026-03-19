@@ -7,6 +7,7 @@ def vm(program, jumpTable):
 
     
     while ip < len(program):
+        print(ip)
         cmd = program[ip]
         match cmd:
             case "ptrRight":
