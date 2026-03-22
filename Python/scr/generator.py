@@ -8,19 +8,19 @@ def isSmaller(a, b, c, temp):
 
 def generator(program):
     code = []
-    ip = 0
+    curr = 0
     
-    for p in program:
-        temp = p - ip
+    for targ in program:
+        temp = targ - curr
     
         if temp == 0:
             code.append("outCell")
         else:
-            a = int(math.sqrt(abs(temp)))
+            a = int(math.sqrt(abs(temp))) or 1
             b = temp // a
             c = temp - (a * b)
 
-            if isSmaller(a, b, c, temp):
+            if a > 1 and isSmaller(a, b, c, temp):
                 for _ in range(abs(a)):
                     code.append("incCell" if a > 0 else "decCell")
 
@@ -45,7 +45,8 @@ def generator(program):
                 for _ in range(abs(temp)):
                     code.append("incCell" if temp > 0 else "decCell")
 
-        ip = p
+        code.append("outCell")
+        curr = targ
         
     
     return code

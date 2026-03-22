@@ -7,7 +7,6 @@ def vm(program, jumpTable):
 
     
     while ip < len(program):
-        print(ip)
         cmd = program[ip]
         match cmd:
             case "ptrRight":
@@ -28,7 +27,10 @@ def vm(program, jumpTable):
                     ip = jumpTable[ip] 
             case "jmpBck":
                 if cells[ptr] != 0:
-                    ip = jumpTable[ip] 
+                    ip = jumpTable[ip]
+                    print(cells)
+                    print(res)
+                    input("somthing")
             case _:
                 raise ValueError(f"Invalid token pair: {token}")
             
