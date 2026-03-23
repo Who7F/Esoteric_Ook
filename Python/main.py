@@ -20,10 +20,10 @@ def main():
         program = scr.parseAscii(tokens)
 
         code = scr.generator(program)
-
-        print(code)
-                
+        
         test = scr.encOok(code)
+
+        print(test)
 
         tokens = scr.tokenizeOok(test)
 

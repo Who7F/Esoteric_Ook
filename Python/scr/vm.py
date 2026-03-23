@@ -28,9 +28,6 @@ def vm(program, jumpTable):
             case "jmpBck":
                 if cells[ptr] != 0:
                     ip = jumpTable[ip]
-                    print(cells)
-                    print(res)
-                    input("somthing")
             case _:
                 raise ValueError(f"Invalid token pair: {token}")
             
